@@ -1,0 +1,23 @@
+<div [style.background-color]="user.background" [style.color]="user.color" class="card">
+    <img class="card-img-top" [src]="user.fileInput" alt="User Image">
+    <div class="card-body">
+      <h5 class="card-title">Name:
+        {{ user.name.length>11 ? user.name.substring(0,11)+"..." : user.name }}
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted">Email: {{ user.email }}</h6>
+      <p class="card-text">
+        Password: {{ user.password.length>16 ? user.password.substring(0,13)+"..." : user.password }}<br>
+        Mobile: {{ user.mobile }}<br>
+        Favorite Game: {{ user.fav_game }}<br>
+        Gender: {{ user.gender }}
+      </p>
+      <p class="card-text">Comments: {{ user.textArea.length>16 ? user.textArea.substring(0,13)+"..." : user.textArea }}</p>
+      <p class="card-text">Text Color: {{ user.color }}</p>
+      <p class="card-text">Background Color: {{ user.background }}</p>
+      <p class="card-text">Condition: {{ user.condition }}</p>
+    </div>
+    <div class="container">
+      <button (click)="Delete()" [style.background-color]="user.color" [style.color]="user.background" class="btn btn-primary mb-2">Delete User</button>
+      <button (click)="Edit()" [style.background-color]="user.color" [style.color]="user.background" class="btn btn-primary mb-2 ml-2">Edit User</button>
+    </div>
+</div>

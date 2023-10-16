@@ -1,0 +1,30 @@
+{
+    "_id": {
+      "$oid": "648707b8bd3389441ac3c09b"
+    },
+    "fotaPercentage": 100,
+    "ufw": "5.2.19",
+    "createdAt": {
+      "$date": "2023-06-09T12:57:18.083Z"
+    },
+    "updatedAt": {
+      "$date": "2023-08-22T20:38:39.951Z"
+    },
+    "modelName": "AEPL051400",
+    "createdon": "45082",
+    "uid": "ACON4NA062300048109",
+    "imei": "868274067369555",
+    "iccid": "89916420534724182085",
+    "oepartno": "508854719901",
+    "bootstrapexpdate": "29.08.2023",
+    "firmwareVersion": "5.2.6_REL04",
+    "tcuteststatus": "OK",
+    "emissionType": "A4G",
+    "simserviceoperator": "BSNL",
+    "simVendor": "Sensorise",
+    "__v": 0,
+    "activeBy": "Wed Aug 23 2023 02:08:39 GMT+0530 (India Standard Time)",
+    "loggedIntime": {
+      "$date": "2023-08-22T20:38:39.951Z"
+    }
+}

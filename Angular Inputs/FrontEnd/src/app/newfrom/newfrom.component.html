@@ -1,0 +1,91 @@
+<form [formGroup]="myform" (ngSubmit)="onSubmit()" class="container mt-5">
+    <h1 class="text-center">MY FORM</h1>
+    <div class="form-group">
+      <label for="name">Enter Your Name :-</label>
+      <input formControlName="name" type="text" id="name" name="name" class="form-control" />
+      <p class="text-danger" *ngIf="myform.controls['name'].errors && myform.controls['name'].touched || subimtted && myform.controls['name'].errors">*Write a valid name.</p>
+    </div>
+    <div class="form-group">
+      <label for="email">Enter Your Email Id :-</label>
+      <input formControlName="email" type="email" id="email" name="email" class="form-control" />
+      <p class="text-danger" *ngIf="myform.controls['email'].errors && myform.controls['email'].touched || subimtted && myform.controls['email'].errors">*Write a valid email.</p>
+    </div>
+  
+    <div class="form-group">
+      <label for="mobile">Enter Mobile Number :-</label>
+      <input formControlName="mobile" type="tel" maxlength="10" id="mobile" name="mobile" class="form-control" />
+      <p class="text-danger" *ngIf="myform.controls['mobile'].errors && myform.controls['mobile'].touched || subimtted && myform.controls['mobile'].errors">*Write a valid 10-digit mobile number.</p>
+    </div>
+  
+    <div class="form-group">
+      <label for="passwordInput">Create Password :-</label>
+      <input formControlName="password" type="password" id="passwordInput" name="password" class="form-control" />
+      <p class="text-danger" *ngIf="myform.controls['password'].errors && myform.controls['password'].touched || subimtted && myform.controls['password'].errors">*Write a valid password with a minimum length of 8 characters.</p>
+    </div>
+  
+    <div class="form-group">
+      <label for="rangeInput">Range :-</label>
+      <input formControlName="rangeInput" type="range" min="1" max="1000" id="rangeInput" name="rangeInput" class="form-control-range" />
+      <span class="text-center" style="display: block;">Range num: {{ myform.value.rangeInput }}</span>
+    </div>
+  
+    <div class="form-group">
+      <label for="fav_game">Select Favorite Game :-</label>
+      <select formControlName="fav_game" id="fav_game" name="fav_game" class="form-control">
+        <option value="">- Select -</option>
+        <option value="Rock">Rock</option>
+        <option value="Paper">Paper</option>
+        <option value="Scissors">Scissors</option>
+      </select>
+      <p class="text-danger" *ngIf="myform.controls['fav_game'].errors && myform.controls['fav_game'].touched || subimtted && myform.controls['fav_game'].errors">*Please select one option to continue.</p>
+    </div>
+  
+    <div class="form-group">
+      <label>Gender :-</label>
+      <div class="form-check">
+        <input type="radio" formControlName="gender" id="radioOption1" value="Male" class="form-check-input" />
+        <label for="radioOption1" class="form-check-label">Male</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" formControlName="gender" id="radioOption2" value="Female" class="form-check-input" />
+        <label for="radioOption2" class="form-check-label">Female</label>
+      </div>
+      <p class="text-danger" *ngIf="myform.controls['gender'].errors && myform.controls['gender'].touched || subimtted && myform.controls['gender'].errors">*Please select one to continue.</p>
+    </div>
+  
+    <div class="form-group">
+      <label for="textArea">Text Area :-</label>
+      <textarea id="textArea" name="textArea" rows="4" cols="3" placeholder="Write any comments here" formControlName="textArea" class="form-control"></textarea>
+      <p class="text-danger" *ngIf="myform.controls['textArea'].errors && myform.controls['textArea'].touched || subimtted && myform.controls['textArea'].errors">*Text area field can't be empty.</p>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="color">Text color</label>
+          <input formControlName="color" type="color" id="color" name="color" class="form-control" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="background">
+           Background
+          </label>
+          <input formControlName="background" type="color" id="background" name="background" class="form-control" />
+        </div>
+        
+        <div class="form-group col-md-6">
+          <label for="fileInput">Select Your Image</label>
+          <input style="cursor: pointer;" formControlName="fileInput" type="file" (input)="onFileSelected($event)" accept="image/*" id="fileInput" name="fileInput" class="form-control-file" />
+          <p class="text-danger" *ngIf="myform.controls['fileInput'].errors && myform.controls['fileInput'].touched || subimtted && myform.controls['fileInput'].errors">*Select your image to continue.</p>
+        </div>
+      </div>
+      
+    
+    <div class="form-check">
+      <input style="cursor: pointer;" formControlName="condition" type="checkbox" id="condition" name="condition" class="form-check-input" />
+      <label for="condition" class="form-check-label">Accept all terms and conditions before submitting the form.</label>
+      <p class="text-danger" *ngIf="myform.controls['condition'].errors && myform.controls['condition'].touched || subimtted && myform.controls['condition'].errors || myform.controls['condition'].touched && !myform.value.condition">*Please accept terms and conditions to submit the form.</p>
+    </div>
+  
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary mt-1">Submit Form</button>
+      </div>
+  </form>
+  

@@ -1,0 +1,13 @@
+<div *ngIf="allprofils.length===0" class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-12 text-center">
+            <h1>No users added</h1>
+        </div>
+    </div>
+</div>
+<div *ngIf="!edit" class="container mt-2">
+    <div class="row">
+    <app-form-details (DeleteUser)="DeleteUser($event)" (EditUser)="EditUser($event)" [user]="user" class="col-lg-3 col-md-4 col-6" *ngFor="let user of allprofils;"></app-form-details>
+    </div>
+</div>
+<app-edit-form (UserUpdated)="UserUpdated()" (closeModal)="SetEditModal(false)" class="formmodal" *ngIf="edit" [editProfile]="editProfile"></app-edit-form>

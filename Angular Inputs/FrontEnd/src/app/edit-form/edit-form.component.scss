@@ -1,0 +1,22 @@
+form {
+    max-width: 520px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  .cancel{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .btndiv{
+     display: flex;
+     justify-content: space-around;
+     margin-top: 10px;
+
+  }

@@ -1,0 +1,46 @@
+
+{
+    "_id": {
+      "$oid": "645cb0dd0990f2d8445f036f"
+    },
+    "batchFotaStatus": "Completed",
+    "pass": true,
+    "fail": false,
+    "isdeleted": false,
+    "isFotaInitiated": true,
+    "ufw": "5.2.4",
+    "lastLogin": {
+      "$date": "2023-05-11T09:11:58.000Z"
+    },
+    "fotaPercent": 100,
+    "isDeleted": false,
+    "fotaCompleteStatus": true,
+    "createdAt": {
+      "$date": "2023-05-08T11:13:52.699Z"
+    },
+    "updatedAt": {
+      "$date": "2023-05-08T11:13:52.699Z"
+    },
+    "batchStatus": false,
+    "batchCreatedAT": {
+      "$date": "2023-05-08T11:13:52.697Z"
+    },
+    "fotaBatchRef": {
+      "$oid": "645cb0dd0990f2d8445f036d"
+    },
+    "batchRefId": {
+      "$oid": "645cb0dd0990f2d8445f036d"
+    },
+    "fotabatchId": 1,
+    "fotabatchName": "WB on Field FOTA",
+    "fotabatchDescription": "868274066922792",
+    "deviceImei": "868274066922792",
+    "UIN": "ACON4NA032300003376",
+    "model": "4G",
+    "state": "West Bengal",
+    "deviceStatus": "Yes",
+    "__v": 0,
+    "isinitilized": true,
+    "firmwareVersion": "5.2.3",
+    "toTake": "Y"
+  }
