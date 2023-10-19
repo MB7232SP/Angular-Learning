@@ -1,0 +1,14 @@
+
+.image-list{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
+    & img{
+      height: 200px;
+      overflow:hidden;
+    }
+    &>*{
+      margin-top: 0px;
+    }
+  }

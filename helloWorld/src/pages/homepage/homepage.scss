@@ -1,0 +1,25 @@
+page-homepage {
+  .serch_input_parent{
+    position: fixed;
+    top: -13px;
+    width: 100%;
+    &  button{
+      position: absolute;
+      right: 10px;
+      top: 25px;
+    }
+  }
+  .image-list{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
+    & img{
+      height: 200px;
+      overflow:hidden;
+    }
+    &>*{
+      margin-top: 0px;
+    }
+  }
+}
