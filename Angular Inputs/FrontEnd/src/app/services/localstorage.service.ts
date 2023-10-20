@@ -21,5 +21,8 @@ export class LocalStorage{
     }
     updateData(data:any):  Observable<any>{
       return this.http.patch(`${this.endpont}/update`,data);
-  }
+    }
+    updateCSVDATA(data:any):  Observable<any>{
+      return this.http.post('http://localhost:3000/uploadcsv',data);
+    }
 }

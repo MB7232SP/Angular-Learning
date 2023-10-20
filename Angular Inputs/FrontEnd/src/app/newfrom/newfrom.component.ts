@@ -12,6 +12,7 @@ export class NewfromComponent implements OnInit {
   myform:FormGroup;
   subimtted: boolean = false;
   imgname:string = '';
+  selectedFile:any;
   constructor(public frombuilder:FormBuilder, private localStorage: LocalStorage) {
        this.myform = this.frombuilder.group({
         name:new FormControl('',[Validators.required, Validators.minLength(3)]),
@@ -58,5 +59,17 @@ export class NewfromComponent implements OnInit {
     }else{
       alert('Please check all fileds first');
     }
+  }
+  fileseleceted(event:any){
+    console.log('file selected');
+    this.selectedFile = event.target.files[0];
+  }
+  uploadcsv(){
+    const formData = new FormData();
+    formData.append('csvFile', this.selectedFile, this.selectedFile.name);
+
+    this.localStorage.updateCSVDATA(formData).subscribe((res)=>{
+      console.log(res);
+    })
   }
 }

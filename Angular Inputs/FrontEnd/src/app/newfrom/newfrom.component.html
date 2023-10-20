@@ -1,3 +1,8 @@
+<div>
+  <input type="file" (change)="fileseleceted($event)" accept=".csv, text/csv" #csvfile>
+  <button (click)="uploadcsv()">Upload CSV</button>
+</div>
+
 <form [formGroup]="myform" (ngSubmit)="onSubmit()" class="container mt-5">
     <h1 class="text-center">MY FORM</h1>
     <div class="form-group">
