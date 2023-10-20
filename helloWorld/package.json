@@ -1,4 +1,4 @@
- {
+{
   "name": "helloWorld",
   "version": "0.0.1",
   "author": "Ionic Framework",
@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/android-permissions": "^5.36.0",
     "@ionic-native/core": "4.20.0",
+    "@ionic-native/file": "^5.36.0",
     "@ionic-native/file-transfer": "^4.20.0",
     "@ionic-native/splash-screen": "4.20.0",
     "@ionic-native/status-bar": "4.20.0",
@@ -54,7 +55,8 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-android-permissions": {},
-      "cordova-plugin-file-transfer": {}
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-file": {}
     },
     "platforms": [
       "android"

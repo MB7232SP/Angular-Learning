@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import {ActionSheetController, Platform, ToastController} from 'ionic-angular'
 import { ApiService } from '../../services/api.service';
 import { saveAs } from 'file-saver';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 /**
  * Generated class for the ImageCardComponent component.
  *
@@ -21,19 +22,32 @@ export class ImageCardComponent {
     public ApiCall:ApiService,
     public toastCtrl: ToastController,
     ) {
+      AndroidPermissions.checkPermission(AndroidPermissions.PERMISSION.READ_EXTERNAL_STORAGE).then(
+        result => {
+          if (result.hasPermission) {
+            // You have the permission, you can access the storage.
+            console.log('permission granted')
+          } else {
+            console.log('permission not granted')
+            // Request the permission
+            AndroidPermissions.requestPermission(AndroidPermissions.PERMISSION.READ_EXTERNAL_STORAGE);
+          }
+        },
+        err => {
+          console.log('somthing went wrong')
+          console.error(err);
+        }
+      );
+    
   }
-  Download(url:string,name:string){
-    if(this.platform.is('android')){
-      
-    }
-    else{
+  Download(url:string,name:string){ 
       this.ApiCall.presentLoading();
       this.ApiCall.getImage(url).subscribe((res: Blob)=>{
         this.saveImage(res,name);
         this.ApiCall.dismisLoading();
       })
-    }
   };
+
   saveImage(data: Blob,name:string) {
     const blob = new Blob([data], { type: 'image/jpeg' }); // Set the correct MIME type
     saveAs(blob, `${name}.jpg`);

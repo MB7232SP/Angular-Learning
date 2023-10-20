@@ -26,8 +26,5 @@
     "rewriteTsconfig": false
   },
   "baseUrl": "./",
-"paths": {
-  "@ionic-native/*": ["node_modules/@ionic-native/*"]
-}
 
 }

@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HomepagePage } from '../pages/homepage/homepage';
@@ -12,7 +11,7 @@ import { ImageCardComponent } from '../components/image-card/image-card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../services/api.service';
-
+import {AndroidPermissions} from '@ionic-native/android-permissions/ngx/index'
 
 @NgModule({
   declarations: [
@@ -40,7 +39,8 @@ import { ApiService } from '../services/api.service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ApiService
+    ApiService,
+    AndroidPermissions
   ]
 })
 export class AppModule {}
